@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE ACCOUNT</title>
+    <link rel="stylesheet" href="create.css">
+   <script src="create.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+          <div class="header">
+            <h2 class="animation a1">Create Account</h2>
+            <h4 class="animation a2">Sign up with your details</h4>
+          </div>
+          <div class="form">
+            <input type="text" class="form-field animation a3" placeholder="Full Name" [(ngModel)]="fullName">
+            <input type="email" class="form-field animation a4" placeholder="Email Address" [(ngModel)]="email">
+            <input type="password" class="form-field animation a5" placeholder="Password" [(ngModel)]="password">
+            <input type="password" class="form-field animation a6" placeholder="Confirm Password" [(ngModel)]="confirmPassword">
+            <button class="animation a7" id="createAccountButton" (click)="onCreateAccount()">CREATE ACCOUNT</button>
+          </div>
+        </div>
+        <div class="right"></div>
+      
+        <div class="popup-overlay" *ngIf="popupVisible" (click)="closePopup()"></div>
+        <div class="popup" *ngIf="popupVisible">
+          <p>{{ popupMessage }}</p>
+          <button (click)="closePopup()">Close</button>
+        </div>
+      </div>
+      
+</body>
+</html>
